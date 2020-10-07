@@ -1,0 +1,94 @@
+<div class="items-sell-contents">
+  <%# <header class="items-sell-header"> %>
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">試合結果を入力</h2>
+    <%= form_with model: @foot, url: foots_path, local: true do |f| %>
+
+    <%# <%= render 'shared/error_messages', model: f.object %> 
+
+    <%# チーム画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+    <%# チーム名 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        チーム名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :ateam_name, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    <%# チーム名 %>
+
+    <%# 点数選択 %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          点数
+          <span class="indispensable">必須</span>
+        </div>
+        <%# <%= f.collection_select(:ascore_id, Ascore.all, :id, :name, {}, {class:"genre-select"}) %> 
+      </div>
+    </div>
+    <%# /点数選択 %>
+
+
+        <%# チーム画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        出品画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    <%# /出品画像 %>
+    <%# チーム名 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        チーム名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :ateam_name, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+    <%# チーム名 %>
+
+    <%# 点数選択 %>
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          点数
+          <span class="indispensable">必須</span>
+        </div>
+        <%# <%= f.collection_select(:ascore_id, Ascore.all, :id, :name, {}, {class:"genre-select"}) %> 
+      </div>
+    </div>
+    <%# /点数選択 %>
+
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "表示する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+</div>
