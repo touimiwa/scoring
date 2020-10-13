@@ -18,9 +18,14 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :images, name: 'foot[images][]', id:"foot_image" %>
       </div>
+        <div id="image-list"></div>
     </div>
+
+    <% @foot.images.each do |image| %>
+    <%= image_tag foot.image, class: 'images' %>
+    <% end %>
     <%# /出品画像 %>
     <%# チーム名 %>
     <div class="new-items">
@@ -28,7 +33,27 @@
         チーム名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :ateam_name, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
+      <%= f.text_area :ateam, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+
+    <div class="items-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          点数
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:ascore_id, Ascore.all, :id, :name, {}, {class:"genre-select"})  %>
+      </div>
+    </div>
+
+
+    <%# チーム名 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        チーム名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :bteam, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
     </div>
     <%# チーム名 %>
 
@@ -39,56 +64,18 @@
           点数
           <span class="indispensable">必須</span>
         </div>
-        <%# <%= f.collection_select(:ascore_id, Ascore.all, :id, :name, {}, {class:"genre-select"}) %> 
+        <%= f.collection_select(:bscore_id, Bscore.all, :id, :name, {}, {class:"genre-select"})  %>
       </div>
     </div>
-    <%# /点数選択 %>
 
 
-        <%# チーム画像 %>
-    <div class="img-upload">
-      <div class="weight-bold-text">
-        出品画像
-        <span class="indispensable">必須</span>
-      </div>
-      <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
-        <%= f.file_field :image, id:"item-image" %>
-      </div>
-    </div>
-    <%# /出品画像 %>
-    <%# チーム名 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        チーム名
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_area :ateam_name, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
-    </div>
-    <%# チーム名 %>
-
-    <%# 点数選択 %>
-    <div class="items-detail">
-      <div class="form">
-        <div class="weight-bold-text">
-          点数
-          <span class="indispensable">必須</span>
-        </div>
-        <%# <%= f.collection_select(:ascore_id, Ascore.all, :id, :name, {}, {class:"genre-select"}) %> 
-      </div>
-    </div>
-    <%# /点数選択 %>
-
-
-    <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "表示する" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
+  
   <% end %>
 
 </div>

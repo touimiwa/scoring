@@ -1,30 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <h1>Welcome</h1>
+  </body>
+</html>
+
+
 <%= render "shared/header" %>
 <div class='main'>
 
 
   <div class='title-contents'>
-      <div class='lists-right'>
       <h2 class='service-title'>
         FootScoring
       </h2>
       <p class='service-explain'>
-        自分自身のMVPを決めれる！！
+        選手を採点し
       </p>
       <p class='service-explain'>
-        採点アプリです
+        自分自身のMVPを決めろ！！！
       </p>
-      </div>
   </div>
 
   <div class='item-contents'>
       <h2 class='title'>最新情報</h2>
       <%= link_to '試合結果', "#", class: "subtitle" %>
   </div>
+
+
+<%# <ul class='foot-lists'> %>
+  
+  <% @foots.each do |foot| %>
+  <%# <li class='list'> %>
+    <%= link_to foots_path(foot.id) do %>
+    <div class='foot-img-content'>
+      <% foot.images.each do |image| %>
+      <%= image_tag image.variant(resize: '100x100'), class: 'images'%>
+      <% end %> 
+    </div>
+    <h3 class='item-name'>
+      <%= foot.ateam %>
+    </h3>
+    <h3 class='item-name'>
+      <%= foot.ascore_id %>
+    </h3>
+    <h3 class='item-name'>
+      <%= foot.bteam %>
+    </h3>
+    <h3 class='item-name'>
+      <%= foot.bscore_id %>
+    </h3>
+    <% end %>
+  <%# </li> %>
+  <% end %>
+<%# </ul> %>
 </div>
+
+
+
+
+
+
+
 <%= link_to new_foot_path do%> 
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>結果投稿</span>
     <%= image_tag 'cameraa.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 </div>
 <% end %>
+
+
+
 <%# <%= render "shared/footer" %> 

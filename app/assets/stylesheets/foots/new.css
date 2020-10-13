@@ -98,3 +98,8 @@
   padding: 15px 35%;
   text-decoration: none;
 }
+
+.image-size {
+  max-width: 300px;
+  max-height: 200px;
+}
