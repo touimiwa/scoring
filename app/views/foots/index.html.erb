@@ -13,7 +13,7 @@
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <h1>Welcome</h1>
+  <span class="shadow">FootScoring</span>
   </body>
 </html>
 
@@ -40,32 +40,39 @@
   </div>
 
 
-<%# <ul class='foot-lists'> %>
-  
+
+  <div class= 'game'>
   <% @foots.each do |foot| %>
-  <%# <li class='list'> %>
-    <%= link_to foots_path(foot.id) do %>
+    <div class='sss'>
     <div class='foot-img-content'>
       <% foot.images.each do |image| %>
       <%= image_tag image.variant(resize: '100x100'), class: 'images'%>
       <% end %> 
     </div>
-    <h3 class='item-name'>
-      <%= foot.ateam %>
-    </h3>
-    <h3 class='item-name'>
-      <%= foot.ascore_id %>
-    </h3>
-    <h3 class='item-name'>
-      <%= foot.bteam %>
-    </h3>
-    <h3 class='item-name'>
-      <%= foot.bscore_id %>
-    </h3>
+
+    <%= link_to foot_path(foot.id) do %>
+    <div class='team-name'>
+      <div class='item-name'>
+        <%= foot.ateam %>
+      </div>
+      <div class='ttt'>VS</div>
+      <div class='item-name'>
+        <%= foot.bteam %>
+      </div>
+    </div>
     <% end %>
-  <%# </li> %>
+    <div class='foot-name'>
+      <div class='away-name'>
+        <%= foot.ascore_id %>
+      </div>
+      <h2 class='yyy'>ー</h2>
+      <div class='away-name'>
+        <%= foot.bscore_id %>
+      </div>
+    </div>
+    </div>
   <% end %>
-<%# </ul> %>
+  </div>
 </div>
 
 
@@ -77,7 +84,7 @@
 <%= link_to new_foot_path do%> 
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>結果投稿</span>
-    <%= image_tag 'cameraa.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <%= image_tag 'soccer.png' , size: '185x50' ,class: "purchase-btn-icon" %>
 </div>
 <% end %>
 

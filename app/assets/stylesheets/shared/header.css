@@ -3,6 +3,7 @@
 }
 
 .top-page-header {
+  background-color: black;
   width: 100vw;
   padding: 2vh 15vw;
   display: flex;
@@ -64,24 +65,39 @@
 .user-nickname {
   text-decoration: none;
   margin-right: 3vw;
-  color: #333333;
-  font-weight: bold;
+  animation: blinkAnime 1s infinite alternate;
+}
+@keyframes blinkAnime{
+   0% { color: #000000 }
+ 100% { color: #ff0000 }
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
+  animation: blinkAnime 1s infinite alternate;
+}
+@keyframes blinkAnime{
+   0% { color: #000000 }
+ 100% { color: #ff0000 }
 }
 
 .login {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  animation: blinkAnime 1s infinite alternate;
+}
+@keyframes blinkAnime{
+   0% { color: #000000 }
+ 100% { color: #ff0000 }
 }
 
 .sign-up {
   text-decoration: none;
-  color: #333333;
+  animation: blinkAnime 1s infinite alternate;
+}
+@keyframes blinkAnime{
+   0% { color: #000000 }
+ 100% { color: #ff0000 }
 }

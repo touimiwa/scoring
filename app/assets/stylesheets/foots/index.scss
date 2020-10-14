@@ -1,6 +1,12 @@
-.main {
-  background: black;
+.shadow {
+  display     : inline-block;
+  color       : #000000;            /* 文字の色 */
+  font-size   : 30pt;               /* 文字のサイズ */
+  text-shadow : 10px 10px red;  /* 文字の影 */
 }
+
+
+
 
 
 .title-contents {
@@ -18,19 +24,32 @@
 }
 
 .service-title {
-  font-size: 18vh;
-  color: white;
+  display     : inline-block;       /* 奥行表示のためのブロック化 */
+  color       : #990000;            /* 文字の色 */
+  font-size   : 100pt;               /* 文字サイズ */
+  letter-spacing : 4px;                /* 文字間 */
+  text-shadow    : 
+       2px  2px 1px #000000,
+      -2px  2px 1px #000000,
+       2px -2px 1px #000000,
+      -2px -2px 1px #000000,
+       2px  0px 1px #000000,
+       0px  2px 1px #000000,
+      -2px  0px 1px #000000,
+       0px -2px 1px #000000;        /* 文字の影 */
 }
 
 .service-explain {
-  font-size: 2.5vh;
-  line-height: 60px;
   color: red;
+  display     : inline-block;       /* 奥行表示のためのブロック化 */
+  font-size   : 20pt;               /* 文字サイズ */
+  transform   : perspective(150px)  /* 奥行 */
+                rotateX(45deg);
 }
 
 
 .item-contents {
-  background-color: #FFF;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,10 +57,12 @@
 }
 
 .item-contents>.title {
+  color: red;
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
 }
+
 
 .login {
   text-decoration: none;
@@ -68,18 +89,58 @@
   padding: 1vw;
 }
 
+
+
+
+
+
+
+.game{
+  background: white;
+  text-align: center;
+}
+
+.sss {
+  border: solid;
+  border: 4px solid;
+  border-color: black;
+  border-radius: 8px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.images {
+  margin: 0 200px;
+}
+
+.team-name{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
 .item-name {
   font-size: 2.5vh;
+  width: 480px;
 }
 
-.list {
-  padding: 2.5% 0;
+.ttt {
+  font-size: 30px;
+  color: black;
+}
+
+.foot-name{
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  width: 100vw;
 }
 
+.yyy {
+  font-size: 30px;
+  color: black;
+}
 
-.foot-img-content{
-  
+.away-name {
+  font-size: 2.5vh;
+  width: 480px;
 }

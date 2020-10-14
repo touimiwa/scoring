@@ -1,3 +1,4 @@
+<%= render "shared/header" %>
 <div class="items-sell-contents">
   <%# <header class="items-sell-header"> %>
 
@@ -6,7 +7,7 @@
     <h2 class="items-sell-title">試合結果を入力</h2>
     <%= form_with model: @foot, url: foots_path, local: true do |f| %>
 
-    <%# <%= render 'shared/error_messages', model: f.object %> 
+    <%= render 'shared/error_messages', model: f.object %>
 
     <%# チーム画像 %>
     <div class="img-upload">
@@ -30,11 +31,92 @@
     <%# チーム名 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        チーム名
+        ホームチーム名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :ateam, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
     </div>
+
+    <h2 class='www'>メンバー登録</h2>
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        GK
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :one_member, class:"items-text", id:"item-name", placeholder:"フルネーム" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :two_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :three_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :four_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :five_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :six_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :seven_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :eight_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :nine_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        FW
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :ten_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        FW
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :eleven_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    
 
     <div class="items-detail">
       <div class="form">
@@ -50,12 +132,93 @@
     <%# チーム名 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        チーム名
+        アウェイチーム名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :bteam, class:"items-text", id:"item-name", placeholder:"チーム名（必須 40文字まで)", maxlength:"40" %>
     </div>
     <%# チーム名 %>
+
+    <h2 class='www'>メンバー登録</h2>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        GK
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :aone_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :atwo_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :athree_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :afour_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        DF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :afive_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :asix_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :aseven_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :aeight_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        MF
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :anine_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        FW
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :aten_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        FW
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :aeleven_member, class:"items-text", id:"item-name", placeholder:"フルネーム", maxlength:"40" %>
+    </div>
 
     <%# 点数選択 %>
     <div class="items-detail">
@@ -70,7 +233,7 @@
 
 
     <div class="sell-btn-contents">
-      <%= f.submit "表示する" ,class:"sell-btn" %>
+      <%= f.submit "試合結果表示" ,class:"sell-btn" %>
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
