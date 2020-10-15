@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
 
