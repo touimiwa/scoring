@@ -58,3 +58,4 @@ gem 'mini_magick'
 group :production do
   gem 'rails_12factor'
 end
+gem 'rails_admin', '~> 2.0.0.beta'
