@@ -93,7 +93,7 @@
  100% { color: #ff0000 }
 }
 
-.sign-up {
+.sign_up {
   text-decoration: none;
   animation: blinkAnime 1s infinite alternate;
 }

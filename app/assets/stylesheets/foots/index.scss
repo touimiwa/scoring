@@ -5,6 +5,10 @@
   text-shadow : 10px 10px red;  /* 文字の影 */
 }
 
+.main {
+  background-color: black;
+}
+
 
 
 
@@ -96,14 +100,14 @@
 
 
 .game{
-  background: white;
+  background: black;
   text-align: center;
 }
 
 .sss {
   border: solid;
   border: 4px solid;
-  border-color: black;
+  border-color: red;
   border-radius: 8px;
   width: 100%;
   margin: 20px auto;
@@ -117,6 +121,7 @@
   display: flex;
   justify-content: center;
   width: 100vw;
+  color: white;
 }
 
 .item-name {
@@ -126,18 +131,19 @@
 
 .ttt {
   font-size: 30px;
-  color: black;
+  color: white;
 }
 
 .foot-name{
   display: flex;
   justify-content: center;
   width: 100vw;
+  color: white;
 }
 
 .yyy {
   font-size: 30px;
-  color: black;
+  color: white;
 }
 
 .away-name {
