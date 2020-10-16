@@ -2,7 +2,7 @@ class FootsController < ApplicationController
   before_action :set_foot, only: [:edit, :update, :show]
 
   def index
-    @foots = Foot.all
+    @foots = Foot.all.order('created_at DESC')
   end
 
   def new

@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  # belongs_to :user, optional: true
+  has_many :foots
 
-  # validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
 
-  # validates :nickname, presence: true
+  validates :nickname, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

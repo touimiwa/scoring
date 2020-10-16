@@ -1,5 +1,5 @@
 class Foot < ApplicationRecord
-  has_many :foots
+  belongs_to :user, optional: true
   has_many_attached :images
 
   extend ActiveHash::Associations::ActiveRecordExtensions
