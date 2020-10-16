@@ -24,6 +24,9 @@
   <div class= 'game'>
   <% @foots.each do |foot| %>
     <div class='sss'>
+    <div class='time'>
+      <%= foot.created_at.to_s(:datetime_jp) %>
+    </div>
     <div class='foot-img-content'>
       <% foot.images.each do |image| %>
       <%= image_tag image.variant(resize: '100x100'), class: 'images'%>
