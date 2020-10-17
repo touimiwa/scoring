@@ -1,112 +1,38 @@
 <%= render "shared/header" %>
 
 
-<div class="item-explain-box">
-      <span><%= @foot.ateam %></span>
-    </div>
 
-<table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">GK</th>
-          <td class="detail-value"><%= @foot.one_member %></td>
-          <div class="rateoya">
-          <div class="rate"></div>
-          </div>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.two_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.three_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.four_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.five_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.six_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.seven_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.eight_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.nine_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.ten_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.eleven_member %></td>
-        </tr>
-      </tbody>
-    </table>
+<section class="section mt-6">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-5">
+          <div class="card mb-6">
+            <header class="card-header">
+              <p class="card-header-title">
+                <%= @foot.ateam %>VS<%= @foot.bteam %>
+              </p>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <div class="content average-score">
+                  <div class="star-rating mb-2">
+                    <div class="star-rating-front" style="width: <%= @foot.review_score_percentage %>%">★★★★★</div>
+                    <div class="star-rating-back">★★★★★</div>
+                  </div>
+                  <div class="average-score-display ml-3 pt-2">
+                    <%= @foot.avg_score %>点（<%= @foot.reviews.count %>件の採点）
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <%= link_to foot_reviews_path(@foot), class: "button card-footer-item" do %>
+                レビューを見る
+              <% end %>
+              <%= link_to foot_path(@foot), class: "button card-footer-item" do %>
+                レビューを書く
+              <% end %>
+            </footer>
+        </div>
 
-
-    <div class="item-explain-box">
-      <span><%= @foot.bteam %></span>
-    </div>
-
-<table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">GK</th>
-          <td class="detail-value"><%= @foot.aone_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.atwo_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.athree_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.afour_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.afive_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.asix_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.aseven_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.aeight_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.anine_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.aten_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.aeleven_member %></td>
-        </tr>
-      </tbody>
-    </table>
+<%= render 'reviews/form', review: @review, foot: @foot %>

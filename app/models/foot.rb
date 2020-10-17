@@ -1,6 +1,7 @@
 class Foot < ApplicationRecord
   belongs_to :user, optional: true
   has_many_attached :images
+  has_many :reviews, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :ascore
@@ -32,5 +33,21 @@ class Foot < ApplicationRecord
     validates :anine_member
     validates :aten_member
     validates :aeleven_member
+  end
+
+  def avg_score
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f
+    else
+      0.0
+    end
+  end
+
+  def review_score_percentage
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f*100/5
+    else
+      0.0
+    end
   end
 end

@@ -1,5 +1,6 @@
 class FootsController < ApplicationController
   before_action :set_foot, only: [:edit, :update, :show]
+  before_action :authenticate_user!, only: [:show]
 
   def index
     @foots = Foot.all.order('created_at DESC')
@@ -36,6 +37,7 @@ class FootsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   private

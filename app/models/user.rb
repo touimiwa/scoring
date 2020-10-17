@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :foots
+  has_many :reviews, dependent: :destroy
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
 

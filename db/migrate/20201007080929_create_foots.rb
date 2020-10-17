@@ -1,10 +1,10 @@
 class CreateFoots < ActiveRecord::Migration[6.0]
   def change
     create_table :foots do |t|
-      t.string     :ateam,         null: false
-      t.integer    :ascore_id,     null: false
-      t.string     :bteam,         null: false
-      t.integer    :bscore_id,     null: false
+      t.string     :ateam,          null: false
+      t.integer    :ascore_id,      null: false
+      t.string     :bteam,          null: false
+      t.integer    :bscore_id,      null: false
       t.string     :one_member,     null: false
       t.string     :two_member,     null: false
       t.string     :three_member,   null: false
@@ -27,7 +27,7 @@ class CreateFoots < ActiveRecord::Migration[6.0]
       t.string     :anine_member,   null: false
       t.string     :aten_member,    null: false
       t.string     :aeleven_member, null: false
-      t.references :user,          null: false, foreign_key: true
+      t.references :user,           null: false, foreign_key: true
       t.timestamps
     end
   end
