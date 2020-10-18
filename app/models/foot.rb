@@ -35,6 +35,11 @@ class Foot < ApplicationRecord
     validates :aeleven_member
   end
 
+  with_options numericality: { other_than: 0 } do
+    validates :ascore_id
+    validates :bscore_id
+  end
+
   def avg_score
     unless self.reviews.empty?
       reviews.average(:score).round(1).to_f
