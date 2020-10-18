@@ -20,9 +20,7 @@ class FootsController < ApplicationController
   end
 
   def destroy
-    if @foot.destroy
-      redirect_to root_path
-    end
+    redirect_to root_path if @foot.destroy
   end
 
   def edit
@@ -41,8 +39,9 @@ class FootsController < ApplicationController
   end
 
   private
+
   def foot_params
-    params.require(:foot).permit(:ateam, :ascore_id, :bteam, :bscore_id, :one_member, :two_member, :three_member, :four_member, :five_member, :six_member, :seven_member, :eight_member, :nine_member, :ten_member, :eleven_member, :aone_member, :atwo_member, :athree_member, :afour_member, :afive_member, :asix_member, :aseven_member, :aeight_member ,:anine_member, :aten_member, :aeleven_member, images: []).merge(user_id: current_user.id)
+    params.require(:foot).permit(:ateam, :ascore_id, :bteam, :bscore_id, :one_member, :two_member, :three_member, :four_member, :five_member, :six_member, :seven_member, :eight_member, :nine_member, :ten_member, :eleven_member, :aone_member, :atwo_member, :athree_member, :afour_member, :afive_member, :asix_member, :aseven_member, :aeight_member, :anine_member, :aten_member, :aeleven_member, images: []).merge(user_id: current_user.id)
   end
 
   def set_foot

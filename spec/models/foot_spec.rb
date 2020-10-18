@@ -135,12 +135,12 @@ RSpec.describe Foot, type: :model do
       it 'ascore_idが空だと出品できない' do
         @foot.ascore_id = ''
         @foot.valid?
-        expect(@foot.errors.full_messages).to include("Ascore is not a number")
+        expect(@foot.errors.full_messages).to include('Ascore is not a number')
       end
       it 'bscore_idが空だと出品できない' do
         @foot.bscore_id = ''
         @foot.valid?
-        expect(@foot.errors.full_messages).to include("Bscore is not a number")
+        expect(@foot.errors.full_messages).to include('Bscore is not a number')
       end
     end
   end

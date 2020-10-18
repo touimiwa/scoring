@@ -13,12 +13,12 @@ class ReviewsController < ApplicationController
       redirect_to foot_reviews_path(@review.foot)
     else
       @foot = Foot.find(params[:id])
-      render "foot/show"
+      render 'foot/show'
     end
   end
-  
 
   private
+
   def review_params
     params.require(:review).permit(:foot_id, :score, :content, :one_member_id, :two_member_id)
   end
