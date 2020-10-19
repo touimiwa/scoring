@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
   def index
     @foot = Foot.find(params[:foot_id])
     @reviews = @foot.reviews
+    # @siai = Foot.(params[:foot_id])
   end
 
   def create

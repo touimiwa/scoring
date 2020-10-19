@@ -4,6 +4,7 @@ class FootsController < ApplicationController
 
   def index
     @foots = Foot.all.order('created_at DESC')
+    
   end
 
   def new

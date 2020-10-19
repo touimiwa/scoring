@@ -1,138 +1,68 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Column                | Type     | Options     |
+| --------------------- | -------- | ----------- |
+| nickname              | string   | null: false |
+| email                 | string   | null: false |
+| encrypted_password    | string   | null: false |
 
 
-<div class="item-explain-box">
-      <span><%= @foot.ateam %></span>
-    </div>
-    
+### Association
 
-    
-
-<table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">GK</th>
-          <td class="detail-value"><%= @foot.one_member %></td>
-          <div class="rateoya">
-          <div class="rate"></div>
-          </div>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.two_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.three_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.four_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.five_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.six_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.seven_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.eight_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.nine_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.ten_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.eleven_member %></td>
-        </tr>
-      </tbody>
-    </table>
+- has_many :foots
+- has_many :reviews
 
 
-    <div class="item-explain-box">
-      <span><%= @foot.bteam %></span>
-    </div>
+## foots テーブル
 
-<table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">GK</th>
-          <td class="detail-value"><%= @foot.aone_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.atwo_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.athree_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.afour_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">DF</th>
-          <td class="detail-value"><%= @foot.afive_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.asix_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.aseven_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.aeight_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">MF</th>
-          <td class="detail-value"><%= @foot.anine_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.aten_member %></td>
-        </tr>
-        <tr>
-          <th class="detail-item">FW</th>
-          <td class="detail-value"><%= @foot.aeleven_member %></td>
-        </tr>
-      </tbody>
-    </table>
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| ateam          | string     | null: false                    |
+| ascore_id      | integer    | null: false                    |
+| bteam          | string     | null: false                    |
+| bscore_id      | integer    | null: false                    |
+| one_member     | string     | null: false                    |
+| two_member     | string     | null: false                    |
+| three_member   | string     | null: false                    |
+| four_member    | string     | null: false                    |
+| five_member    | string     | null: false                    |
+| six_member     | string     | null: false                    |
+| seven_member   | string     | null: false                    |
+| eight_member   | string     | null: false                    |
+| nine_member    | string     | null: false                    |
+| ten_member     | string     | null: false                    |
+| eleven_member  | string     | null: false                    |
+| aone_member    | string     | null: false                    |
+| atwo_member    | string     | null: false                    |
+| athree_member  | string     | null: false                    |
+| afour_member   | string     | null: false                    |
+| afive_member   | string     | null: false                    |
+| asix_member    | string     | null: false                    |
+| aseven_member  | string     | null: false                    |
+| aeight_member  | string     | null: false                    |
+| anine_member   | string     | null: false                    |
+| aten_member    | string     | null: false                    |
+| aeleven_member | string     | null: false                    |
+| user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- has_many :reviews
+
+
+## reviews テーブル
+
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| content        | string     |                                |
+| score          | integer    |                                |
+| foot           | references | null: false, foreign_key: true |
+| user           | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :foot
