@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
   def index
     @foot = Foot.find(params[:foot_id])
     @reviews = @foot.reviews
-    # @siai = Foot.(params[:foot_id])
   end
 
   def create
@@ -21,6 +20,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:foot_id, :score, :content, :one_member_id, :two_member_id)
+    params.require(:review).permit(:foot_id, :score, :content )
   end
 end
