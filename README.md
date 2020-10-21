@@ -29,7 +29,9 @@ Footscoringを通じて、サッカー好きが試合を見てどう思ったの
 - 管理者権限
 
 ## 管理者権限
-
+- 管理者側（試合投稿のボタンが表示される）
+<img src= "1soccer.jpg" wibth='300' height='300'>
+- 管理者以外（ボタン表示なし）
 <img src= "1soccer.jpg" wibth='300' height='300'>
 
 
