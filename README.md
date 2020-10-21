@@ -30,6 +30,7 @@ Footscoringを通じて、サッカー好きが試合を見てどう思ったの
 
 ## 管理者権限
 
+<img src= "1soccer.jpg" wibth='50' height='50'>
 
 
 
