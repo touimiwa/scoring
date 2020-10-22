@@ -12,7 +12,7 @@
 ID：test＠test
 パスワード:test1234
 ### 管理者以外アカウント
-id:kkk@gmail.com
+id:kkk＠gmail.com
 パスワード：toy10078
 
 ## 利用方法
